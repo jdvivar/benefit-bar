@@ -4,9 +4,11 @@
 @import "bower_components/zava-ui/main.scss";
 // endbower
 
+@import 'https://fonts.googleapis.com/css?family=Montserrat';
+
 $gutter: 5px;
 $benefit-height-md: 77px;
-$benefit-height-sm: 110px;
+$benefit-height-sm: 58px;
 $benefit-height-xs: 55px;
 
 .container {
@@ -41,12 +43,12 @@ $benefit-height-xs: 55px;
 
     &:after {
       @include media-breakpoint-up(sm){
-        top: 50px;
+        top: 25px;
       }
       @include media-breakpoint-up(md){
         top: 35px;
       }
-      top: 25px;
+      top: 23px;
       font-family: 'Streamline';
       content: "\f125";
       right: 8px;
@@ -55,12 +57,22 @@ $benefit-height-xs: 55px;
 
     .benefit-content .text {
       @include media-breakpoint-up(sm){
-        margin-top: 25px;
+        margin-top: 0px;
+        font-size: 13px;
       }
       @include media-breakpoint-up(md){
         margin-top: 5px;
+        font-size: 16px;
       }
+      font-size: 16px;
       margin-top: 8px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    &#benefit-delivery .benefit-content .text {
+      @include media-breakpoint-up(md){
+        margin-top: 18px;
+      }
     }
 
     &#benefit-delivery .benefit-hover .text {
@@ -74,7 +86,7 @@ $benefit-height-xs: 55px;
 
     i {
       @include media-breakpoint-up(sm){
-        top: 45px;
+        top: 20px;
       }
       @include media-breakpoint-up(md){
         top: 30px;
@@ -117,12 +129,6 @@ $benefit-height-xs: 55px;
       opacity: 0;
       font-weight: normal;
       position: relative;
-    }
-    .benefit-content .text{
-      @include media-breakpoint-up(md){
-        font-size: 16px;
-      }
-      font-size: 14px;
     }
 
     &:hover {
