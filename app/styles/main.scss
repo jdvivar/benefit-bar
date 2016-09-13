@@ -22,12 +22,17 @@ $benefit-height-xs: 55px;
     margin-right: -$gutter;
   }
 
+  position: relative;
+
   .benefit {
     @include media-breakpoint-up(sm){
       width: 25%;
       height: $benefit-height-sm;
       display: inline-block;
       float: left;
+      animation: none!important;
+      opacity: 1;
+      position: relative;
     }
     @include media-breakpoint-up(md){
       height: $benefit-height-md;
@@ -39,7 +44,28 @@ $benefit-height-xs: 55px;
     font-weight: bold;
     margin-bottom: 2*$gutter;
     padding: $gutter;
-    position: relative;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    opacity: 0;
+    $total: 4;
+
+    @for $i from 1 through $total {
+      &:nth-child(#{$i}) {
+        animation: opacity-for-#{$i} $benefit-bar-animation-time infinite;
+
+        $from: 0% + (100 / $total * ($i - 1));
+        $to:   0% + (100 / $total * $i);
+
+        @keyframes opacity-for-#{$i} {
+          #{$from}                          { opacity: 0; z-index: 0; }
+          #{$from + ( $to - $from ) / 10}  { opacity: 1; z-index: 1; }
+          #{$to   - ( $to - $from ) / 10}  { opacity: 1; z-index: 1; }
+          #{$to}                            { opacity: 0; z-index: 0; }
+        }
+      }
+    }
 
     &:after {
       @include media-breakpoint-up(sm){
