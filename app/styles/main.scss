@@ -1,0 +1,150 @@
+$icon-font-path: '../fonts/';
+
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "bower_components/zava-ui/assets/stylesheets/_zava.scss";
+// endbower
+
+@import "breakpoints";
+@import "icons";
+
+$gutter: 5px;
+$benefit-height-md: 77px;
+$benefit-height-sm: 110px;
+$benefit-height-xs: 55px;
+
+.container {
+  max-width: 970px;
+}
+
+.benefit-bar {
+  // background-color: black;
+  @include media-breakpoint-up(sm){
+    margin-left: -$gutter;
+    margin-right: -$gutter;
+  }
+
+  .benefit {
+    @include media-breakpoint-up(sm){
+      width: 25%;
+      height: $benefit-height-sm;
+      display: inline-block;
+      float: left;
+    }
+    @include media-breakpoint-up(md){
+      height: $benefit-height-md;
+    }
+
+    height: $benefit-height-xs;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 2*$gutter;
+    padding: $gutter;
+    position: relative;
+
+    &:after {
+      @include media-breakpoint-up(sm){
+        top: 50px;
+      }
+      @include media-breakpoint-up(md){
+        top: 35px;
+      }
+      top: 25px;
+      font-family: 'Streamline';
+      content: "\f125";
+      right: 8px;
+      position: absolute;
+    }
+
+    .benefit-content .text {
+      @include media-breakpoint-up(sm){
+        margin-top: 25px;
+      }
+      @include media-breakpoint-up(md){
+        margin-top: 5px;
+      }
+      margin-top: 8px;
+    }
+
+    &#benefit-delivery .benefit-hover .text {
+      @include media-breakpoint-up(sm){
+        margin-top: 8px;
+      }
+      @include media-breakpoint-up(md){
+        margin-top: auto;
+      }
+    }
+
+    i {
+      @include media-breakpoint-up(sm){
+        top: 45px;
+      }
+      @include media-breakpoint-up(md){
+        top: 30px;
+      }
+      top: 18px;
+      color: #EB008B;
+      font-size: 30px;
+      position: absolute;
+      left: 18px;
+    }
+
+    .benefit-hover,
+    .benefit-content {
+      @include media-breakpoint-up(sm){
+        height: $benefit-height-sm;
+      }
+      @include media-breakpoint-up(md){
+        height: $benefit-height-md;
+      }
+      height: $benefit-height-xs;
+      transition: all 0.5s;
+      border-radius: 3px;
+      border: solid 1px #eee;
+      padding: 10px 25px 10px 50px;
+      width: 100%;
+    }
+
+    .benefit-hover {
+
+      @include media-breakpoint-up(sm){
+        bottom: $benefit-height-sm;
+      }
+      @include media-breakpoint-up(md){
+        bottom: $benefit-height-md;
+        display: block;
+      }
+      bottom: $benefit-height-xs;
+      display: none;
+      font-size: 13px;
+      opacity: 0;
+      font-weight: normal;
+      position: relative;
+    }
+    .benefit-content .text{
+      @include media-breakpoint-up(md){
+        font-size: 16px;
+      }
+      font-size: 14px;
+    }
+
+    &:hover {
+      .benefit-hover,
+      .benefit-content {
+        border-color: #aaa;
+        box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.05);
+      }
+      .benefit-hover {
+        @include media-breakpoint-up(xs){
+          opacity: 1;
+        }
+      }
+      .benefit-content {
+        @include media-breakpoint-up(md){
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
