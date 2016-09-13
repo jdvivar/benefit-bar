@@ -49,11 +49,12 @@ $benefit-height-xs: 55px;
     width: 100%;
 
     opacity: 0;
-    $total: 4;
 
+    $benefit-animation: 3s;
+    $total: 4;
     @for $i from 1 through $total {
       &:nth-child(#{$i}) {
-        animation: opacity-for-#{$i} $benefit-bar-animation-time infinite;
+        animation: opacity-for-#{$i} $benefit-animation*$total infinite;
 
         $from: 0% + (100 / $total * ($i - 1));
         $to:   0% + (100 / $total * $i);
