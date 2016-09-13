@@ -1,10 +1,10 @@
 {
-  "name": "test",
+  "name": "benefit-bar",
   "private": true,
   "dependencies": {
     "bootstrap-sass": "~3.3.5",
     "jquery": "^3.1.0",
-    "zava-ui": "git@github.com:healthbridgeltd/zava-ui.git#^1.0.9"
+    "zava-ui": "git@github.com:healthbridgeltd/zava-ui.git#develop"
   },
   "overrides": {
     "bootstrap-sass": {

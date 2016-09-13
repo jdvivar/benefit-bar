@@ -1,12 +1,8 @@
-$icon-font-path: '../fonts/';
 
 // bower:scss
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
-@import "bower_components/zava-ui/assets/stylesheets/_zava.scss";
+@import "bower_components/zava-ui/main.scss";
 // endbower
-
-@import "breakpoints";
-@import "icons";
 
 $gutter: 5px;
 $benefit-height-md: 77px;
@@ -17,7 +13,7 @@ $benefit-height-xs: 55px;
   max-width: 970px;
 }
 
-.benefit-bar {
+.benefit-bar-sd {
   // background-color: black;
   @include media-breakpoint-up(sm){
     margin-left: -$gutter;
